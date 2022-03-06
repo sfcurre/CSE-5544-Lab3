@@ -8,8 +8,8 @@ from vega_datasets import data
 counties = alt.topo_feature(data.us_10m.url, 'counties')
 source = data.unemployment.url
 
-gd = pd.read_csv('gender.csv')
-conversion = pd.read_csv('countries_codes_and_coordinates.csv')
+gd = pd.read_csv('https://raw.githubusercontent.com/sfcurre/CSE-5544-Lab3/master/gender.csv?token=GHSAT0AAAAAABR3EDHJWOA5LSU7OQBYHWXAYREC25Q')
+conversion = pd.read_csv('https://raw.githubusercontent.com/sfcurre/CSE-5544-Lab3/master/countries_codes_and_coordinates.csv?token=GHSAT0AAAAAABR3EDHJYEGQFIE2JAIMYXB6YREC2LQ')
 conversion = conversion.applymap(lambda x: x.strip().strip('"'))
 conversion = conversion.drop_duplicates('Alpha-3 code')
 conversion.index = conversion['Alpha-3 code']
