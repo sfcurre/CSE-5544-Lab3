@@ -59,7 +59,7 @@ st.header("Heatmaps")
 
 """
 Each heatmap below is identical save for the color scheme used. The first heatmap uses the 'rainbow' scheme,
-while the second heatmap uses the 'darkgold' scheme, which is an Altair equivalent of the black body colormap.
+while the second heatmap uses the 'inferno' scheme, which is an Altair equivalent of the black body colormap.
 
 Each color map plots a select variable (options listed). Data is taken from the Gender Equality Indicators dataset,
 and only attributes with a low degree of missingness are considered. Additonally, ratio variables are used to better
@@ -94,7 +94,7 @@ st.altair_chart(hm, use_container_width=False)
 hm = alt.Chart(gd).mark_rect().encode(
     y=alt.Y('Country Name:N', sort=alt.EncodingSortField(field='order', order='ascending')),
     x='Year:O',
-    color=alt.Color(var+':Q', scale=alt.Scale(scheme='darkgold'))
+    color=alt.Color(var+':Q', scale=alt.Scale(scheme='inferno'))
 ).properties(
     width=1000,
     height=2000
@@ -106,9 +106,9 @@ st.altair_chart(hm, use_container_width=False)
 The two color schemes portray the numerical data in vastly different ways. The rainbow color scheme
 warps the data visualization and makes it extremely difficult to compare higher and lower values of
 the data. Because the color scheme is cyclic, there is little differentiation between high and low
-values. In contrast, the darkgold color scheme makes it significantly easier to compare countries
+values. In contrast, the inferno color scheme makes it significantly easier to compare countries
 and better understand how the values change temporally. Because the intensity of the color changes
-with respect to the values of the variable under consideration, the darkgold color map better portrays
+with respect to the values of the variable under consideration, the inferno color map better portrays
 the data to the reader.
 """
 
@@ -239,7 +239,7 @@ st.altair_chart(hm, use_container_width=False)
 hm = alt.Chart(gd).mark_rect().encode(
     y=alt.Y('Country Name:N', sort=alt.EncodingSortField(field='order', order='ascending')),
     x='Year:O',
-    color=alt.Color(var+':Q', scale=alt.Scale(scheme='darkgold'))
+    color=alt.Color(var+':Q', scale=alt.Scale(scheme='inferno'))
 ).properties(
     width=1000,
     height=2000
